@@ -21,7 +21,7 @@ class Main {
         //System.out.println(Arrays.toString(list));
         String[] punkt = {"+", "-", "*", "/"};
         ArrayList<String> peeking = new ArrayList< >();
-        System.out.println(Arrays.toString(list));
+        //System.out.println(Arrays.toString(list));
         int i=0;
 
         while ( i< list.length)
@@ -29,7 +29,7 @@ class Main {
             if (!list[i].equals(punkt[0]) && !list[i].equals(punkt[1])  && !list[i].equals(punkt[2]) && !list[i].equals(punkt[3]))
             {
                 stack.push(String.valueOf(list[i]));
-                System.out.println(Arrays.toString(stack.toArray()));
+                //System.out.println(Arrays.toString(stack.toArray()));
             }
             else
             {
@@ -40,7 +40,7 @@ class Main {
                     // System.out.println(Arrays.toString(stack.toArray()));
                     String  operand1 = stack.pop() ;
                     String operand2 = stack.pop() ;
-                    System.out.print(operand1 + "    " + operand2 + "\n");
+                    //System.out.print(operand1 + "    " + operand2 + "\n");
                     if ( peeking.get(j).equals("+"))
                     {
                         int newV = Integer.parseInt(operand1)  + Integer.parseInt(operand2);
@@ -73,7 +73,7 @@ class Main {
 
 
                     }
-                    System.out.println(Arrays.toString(stack.toArray()));
+                    //System.out.println(Arrays.toString(stack.toArray()));
                     peeking.remove(peeking.size()-1);
                 }
 
@@ -88,11 +88,15 @@ class Main {
 
         //result = stack.pop();
         Object[] vals = stack.toArray();
-        System.out.print("The result is: ");
-        for (Object obj : vals) {
-            System.out.print(obj + " ");
+        if(!stack.isEmpty())
+        {
+            System.out.print("The result is: ");
+            for (Object obj : vals) {
+                System.out.print(obj + " ");
+            }
         }
-        //10 6 9 3 + -11 * / * 17 + 5 +
+
+
     }
 
 
